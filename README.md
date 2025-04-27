@@ -1,171 +1,208 @@
-# Chat Application (sample readme only)
+# GenieX
 
-## Overview
+<div align="center">
 
-This project is a **React-based chat application** that allows users to communicate in real-time. The app provides personalized experiences by remembering user details and customizing responses based on their preferences. Users can log in with their credentials, and their chats are segregated into categories for better organization.
+![License: Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)
+![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)
+![Maintained](https://img.shields.io/badge/Maintained-yes-brightgreen.svg)
+![Build Status](https://img.shields.io/badge/build-passing-brightgreen)
+![Status](https://img.shields.io/badge/status-active-blue)
 
----
-
-## Features
-
-- **User Authentication**: Secure login system for each user.
-- **Personalized Responses**: The app remembers user details and tailors responses accordingly.
-- **Chat Categories**: Chats can be organized into predefined categories (e.g., Work, Personal, General).
-- **Persistent Data**: User data and chat history are stored securely and persist across sessions.
-- **Real-Time Communication**: Instant messaging between users.
+</div>
 
 ---
 
-## Technologies Used
+**GenieX** is a next-generation modular chatbot solution engineered to deliver dynamic, context-aware conversations across multiple platforms.  
+The application architecture is segregated into two independent processes: a **Client** and a **Backend**, enabling superior scalability, maintainability, and future innovation.
 
-- **Frontend**: React.js
-- **State Management**: React Context or Redux (if applicable)
-- **Backend**: Node.js / Express.js (or Firebase if using a BaaS solution)
-- **Database**: MongoDB / Firebase Firestore (for storing user data and chat history)
-- **Authentication**: JWT or OAuth (e.g., Firebase Auth, Auth0)
-- **Styling**: CSS Modules / TailwindCSS / Styled Components
-- **WebSocket**: Socket.IO (for real-time communication)
+> 🚀 Future-driven. 🔒 Security-first. 🛠️ Built for extensibility.
 
 ---
 
-## Installation
-
-### Prerequisites
-
-1. **Node.js**: Ensure you have Node.js installed. You can download it [here](https://nodejs.org/).
-2. **npm / yarn**: Use npm or yarn as your package manager.
-
-### Steps
-
-1. **Clone the Repository**
-
-   ```bash
-   git clone https://github.com/yourusername/chat-application.git
-   cd chat-application
-   ```
-
-2. **Install Dependencies**
-
-   ```bash
-   npm install
-   ```
-
-   or
-
-   ```bash
-   yarn install
-   ```
-
-3. **Set Up Environment Variables**
-
-   Create a `.env` file in the root directory and add the following:
-
-   ```env
-   REACT_APP_API_URL=http://localhost:5000
-   REACT_APP_AUTH_DOMAIN=your-auth-domain
-   REACT_APP_DATABASE_URL=your-database-url
-   REACT_APP_API_KEY=your-api-key
-   ```
-
-4. **Start the Development Server**
-
-   ```bash
-   npm start
-   ```
-
-   or
-
-   ```bash
-   yarn start
-   ```
-
-   The app will run on `http://localhost:3000`.
-
----
-
-## Backend Setup (Optional)
-
-If you're running a custom backend:
-
-1. Navigate to the backend folder:
-
-   ```bash
-   cd backend
-   ```
-
-2. Install backend dependencies:
-
-   ```bash
-   npm install
-   ```
-
-3. Start the backend server:
-
-   ```bash
-   npm start
-   ```
-
-   The backend will run on `http://localhost:5000`.
-
----
-
-## Usage
-
-1. **Sign Up / Login**: New users can create an account, and existing users can log in.
-2. **Start Chatting**: Once logged in, users can start chatting. Chats are categorized into different sections like "Work", "Personal", etc.
-3. **Personalization**: The app will remember user preferences and personalize responses based on past interactions.
-4. **Logout**: Users can log out from the app, and their session will be terminated.
-
----
-
-## Folder Structure
+## 🗂 Project Structure
 
 ```
-chat-application/
-├── public/                # Static assets
-├── src/                   # React source code
-│   ├── components/        # Reusable UI components
-│   ├── pages/             # Page-level components
-│   ├── context/           # React Context for state management
-│   ├── services/          # API calls and WebSocket connections
-│   ├── utils/             # Utility functions
-│   ├── App.js             # Main application component
-│   └── index.js           # Entry point
-├── .env                   # Environment variables
-├── package.json           # Project dependencies
-└── README.md              # This file
+/GenieX
+    ├── /client      # Frontend application (UI Layer)
+    └── /backend     # Backend server (API & Business Logic)
+```
+
+Each service is self-contained, hosting its own dependencies, environment variables, and runtime configurations.
+
+---
+
+## ⚙️ Prerequisites
+
+- **Node.js** (>= 16.x recommended for both client and backend if applicable)
+- **Package Managers**: `npm` or `yarn`
+- **Environment Variables**: `.env` files specific to each module
+
+---
+
+## 🔑 Environment Variables
+
+Environment variables must be configured separately for the **Client** and **Backend** to ensure operational integrity across environments.
+
+### `/client/.env`
+
+```
+VITE_PUBLISHABLE_KEY=
+VITE_IMAGE_ENDPOINT=
+VITE_IMAGE_PUBLIC_KEY=
+VITE_BACKEND_URL=
+VITE_GEMINI_API_KEY=
+VITE_PORT=
+```
+
+### `/backend/.env`
+
+```
+IMAGE_ENDPOINT=
+IMAGE_PUBLIC_KEY=
+IMAGE_PRIVATE_KEY=
+PORT=
+CLIENT_URL=
+MONGO=
+CLERK_PUBLISHABLE_KEY=
+CLERK_SECRET_KEY=
+GEMINI_API_KEY=
+```
+
+> **Note:** `.env` files must remain confidential and must be excluded from version control using `.gitignore`.
+
+---
+
+## 🤖 Gemini AI Integration
+
+The **GenieX Backend** is seamlessly integrated with **Google's Gemini API** to generate intelligent, context-aware responses.  
+Multiple model variants were evaluated and deployed during testing phases, including:
+
+- **Gemini 1.5 Pro**
+- **Gemini 1.5 Flash**
+- **Gemini 2.0 Pro**
+- **Gemini 2.0 Flash**
+
+All **Flash** (optimized for latency) and **Pro** (optimized for accuracy) models were strategically tested to benchmark performance under different real-world scenarios.
+
+> 🎯 The backend dynamically accommodates model switching to optimize responsiveness, accuracy, or cost-efficiency based on deployment needs.
+
+---
+
+## 🚀 Getting Started
+
+Clone the repository:
+
+```bash
+git clone https://github.com/nameishyam/chat-bot.git
+cd chat-bot
+```
+
+### 1. Launch Backend
+
+Navigate to the backend directory:
+
+```bash
+cd backend
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Start the server:
+
+```bash
+npm start
+```
+
+### 2. Launch Client
+
+Navigate to the client directory:
+
+```bash
+cd ../client
+```
+
+Install dependencies:
+
+```bash
+npm install -f
+```
+
+Start the client:
+
+```bash
+npm run dev
 ```
 
 ---
 
-## Contributing
+## 📦 Deployment Guidelines
 
-Contributions are welcome! Please follow these steps:
+We recommend deploying the **backend** and **client** separately for maximum resilience and performance:
+
+- **Backend**: Host on platforms like AWS EC2, Azure App Service, or Heroku.
+- **Client**: Deploy via Vercel, Netlify, or traditional CDN strategies for optimal delivery.
+
+Proper CI/CD pipelines are strongly encouraged for enterprise-grade deployments.
+
+---
+
+## 🛡 Security and Compliance
+
+- Adhere strictly to role-based access control (RBAC) where applicable.
+- Regularly rotate API keys and authentication tokens.
+- Monitor system health and audit application logs for anomalies.
+- Use environment-specific encryption and secure communications (TLS/SSL).
+- Ensure compliance with API usage policies, especially regarding Gemini API terms.
+
+---
+
+## 👥 Contributing
+
+We embrace a collaborative culture that fosters innovation.
+
+Steps to contribute:
 
 1. Fork the repository.
-2. Create a new branch (`git checkout -b feature/YourFeatureName`).
-3. Commit your changes (`git commit -m 'Add some feature'`).
-4. Push to the branch (`git push origin feature/YourFeatureName`).
-5. Open a pull request.
+2. Create a feature branch: `git checkout -b feature/your-feature-name`
+3. Commit your changes: `git commit -m 'Add: Your feature description'`
+4. Push to your branch: `git push origin feature/your-feature-name`
+5. Open a Pull Request against `main`.
+
+All contributions — from code to documentation — are highly valued.
 
 ---
 
-## License
+## 📄 License
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+This project is licensed under the [Apache 2.0 License](LICENSE).
 
----
+> © [2025] [nameishyam]. All rights reserved.
 
-## Contact
+> You may not use this file except in compliance with the License.  
+> You may obtain a copy at [http://www.apache.org/licenses/LICENSE-2.0](http://www.apache.org/licenses/LICENSE-2.0).
 
-For any questions or suggestions, feel free to reach out:
-
-- **Email**: your-email@example.com
-- **GitHub**: [yourusername](https://github.com/yourusername)
+Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "**AS IS**" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 
 ---
 
-```
+## 📣 Acknowledgements
 
-This README provides a clear overview of your project, including installation instructions, features, and how to contribute. You can customize it further based on your specific implementation details.
-```
+- Google's Gemini AI team for pioneering LLM advancements.
+- Open-source contributors and community innovators.
+- Early beta testers for providing critical feedback.
+- Cloud infrastructure providers facilitating seamless deployments.
+
+At GenieX, we recognize that innovation thrives on collaboration.
+
+---
+
+## 🔮 Vision Statement
+
+_GenieX_ aspires to redefine conversational interfaces by seamlessly blending human intuition with machine intelligence.  
+Our future roadmap includes advanced natural language understanding, personalization engines, real-time translation, and cross-domain integrations.
+
+> Together, we pioneer tomorrow’s conversations. 🌟
