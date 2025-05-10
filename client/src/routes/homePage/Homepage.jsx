@@ -13,10 +13,9 @@ const Homepage = () => {
         <h1>GenieX</h1>
         <h2>Supercharge your creativity and productivity</h2>
         <h3>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Similique
-          repellendus at neque id obcaecati recusandae veniam officia, placeat
-          fugit consequatur doloribus. Incidunt libero error eius repudiandae
-          iure labore fugit asperiores.
+          GenieX is a powerful AI assistant that helps you with your daily tasks
+          and projects. Whether you need help with writing, coding, or
+          brainstorming ideas, GenieX has got you covered.
         </h3>
         <Link to="/dashboard">Get Started</Link>
       </div>
@@ -32,29 +31,29 @@ const Homepage = () => {
                 typingStatus === "human1"
                   ? "/human1.jpeg"
                   : typingStatus === "human2"
-                  ? "/human2.jpeg"
-                  : "bot.png"
+                    ? "/human2.jpeg"
+                    : "bot.png"
               }
               alt="bot"
             />
             <TypeAnimation
               sequence={[
-                ": We produce food for Mice",
+                ": Hello GenieX!",
                 2000,
                 () => {
                   setTypingStatus("bot");
                 },
-                ": We produce food for Hamsters",
+                ": Hello! How can I assist you today?",
                 2000,
                 () => {
                   setTypingStatus("human2");
                 },
-                ": We produce food for Guinea Pigs",
+                ": Tell me a joke.",
                 2000,
                 () => {
                   setTypingStatus("bot");
                 },
-                ": We produce food for Chinchillas",
+                ": Why did the scarecrow win an award? Because he was outstanding in his field!",
                 2000,
                 () => {
                   setTypingStatus("human1");
