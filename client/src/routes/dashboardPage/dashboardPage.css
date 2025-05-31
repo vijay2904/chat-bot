@@ -62,7 +62,7 @@
   .formContainer {
     margin-top: auto;
     width: 50%;
-    background-color: #2c2937;
+    background-color: var(--bg-primary);
     border-radius: 20px;
     display: flex;
 
@@ -81,7 +81,7 @@
         background-color: transparent;
         border: none;
         outline: none;
-        color: #ececec;
+        color: var(--text-color);
       }
       button {
         background-color: #605e68;

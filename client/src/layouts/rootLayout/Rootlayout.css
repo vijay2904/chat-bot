@@ -3,6 +3,7 @@
   height: 100vh;
   display: flex;
   flex-direction: column;
+  background-color: var(--bg-primary);
 
   header {
     display: flex;
@@ -19,6 +20,13 @@
         width: 32px;
         height: 32px;
       }
+    }
+
+    .user {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
     }
   }
 
