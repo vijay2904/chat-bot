@@ -42,7 +42,7 @@ const ChatPage = () => {
                   )}
                   <div
                     className={
-                      message.role === "user" ? "message user" : "message"
+                      message.role === "user" ? "message user" : "message chatbot"
                     }
                     key={i}
                   >

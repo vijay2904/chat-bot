@@ -9,21 +9,31 @@ import Rootlayout from "./layouts/rootLayout/Rootlayout";
 import DashboardLayout from "./layouts/dashboardLayout/DashboardLayout";
 import Signinpage from "./routes/signinPage/Signinpage";
 import Signuppage from "./routes/signupPage/Signuppage";
+import { Providers } from "./components/themeToggle/themeProvider";
+
+const App = () => {
+
+  return (
+      <Router>
+        <Routes>
+          <Route element={<Rootlayout />}>
+            <Route path="/" element={<Homepage />} />
+            <Route path="/sign-in/*" element={<Signinpage />} />
+            <Route path="/sign-up/*" element={<Signuppage />} />
+            <Route element={<DashboardLayout />}>
+              <Route path="/dashboard" element={<DashboardPage />} />
+              <Route path="/dashboard/chats/:id" element={<Chatpage />} />
+            </Route>
+          </Route>
+        </Routes>
+      </Router>
+  );
+};
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <Router>
-      <Routes>
-        <Route element={<Rootlayout />}>
-          <Route path="/" element={<Homepage />} />
-          <Route path="/sign-in/*" element={<Signinpage />} />
-          <Route path="/sign-up/*" element={<Signuppage />} />
-          <Route element={<DashboardLayout />}>
-            <Route path="/dashboard" element={<DashboardPage />} />
-            <Route path="/dashboard/chats/:id" element={<Chatpage />} />
-          </Route>
-        </Route>
-      </Routes>
-    </Router>
+    <Providers>
+      <App />
+    </Providers>
   </React.StrictMode>
 );

@@ -6,8 +6,8 @@
   hr {
     border: none;
     height: 2px;
-    background-color: #ddd;
-    opacity: 0.1;
+    background-color: var(--bg-hr);
+    opacity: 0.2;
     border-radius: 5px;
     margin: 20px 0px;
   }
@@ -60,7 +60,7 @@
         }
 
         &:last-child {
-          color: #888;
+          color: var(--text-color);
         }
       }
     }
